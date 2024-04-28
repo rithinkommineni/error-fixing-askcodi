@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mr. Bookstore</title>
+    <style>
+        body {
+            background-color: #f2f2f2;
+            font-family: Arial, sans-serif;
+        }
+        header {
+            background-color: #4CAF50;
+            padding: 10px;
+            text-align: center;
+        }
+        nav a {
+            text-decoration: none;
+            margin: 0 10px;
+            color: white;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        .book {
+            margin: 20px;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        footer {
+            background-color: #4CAF50;
+            color: black; /* Updated text color for better contrast */
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+        form {
+            margin: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Mr. Bookstore</h1>
+        <nav>
+            <a href="#">Home</a>
+            <a href="#">Books</a>
+            <a href="#">Cart</a>
+            <a href="#">Contact</a>
+        </nav>
+    </header>
+<div class="book">
+    <h2>Book Title 1</h2>
+    <img src="book1.jpg" alt="Book 1">
+    <p>Price: $10</p>
+    <p>Summary: Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+    <p>Reviews:
+        <ol>
+            <li>Great book, highly recommended!</li>
+            <li>Interesting read, couldn't put it down.</li>
+        </ol>
+    </p>
+    <form>
+        <label for="quantity1">Quantity:</label>
+        <input type="number" id="quantity1" name="quantity1" min="1" max="10">
+        <button onclick="addToCart('Book Title 1', 10, document.getElementById('quantity1').value)">Add to Cart</button>
+    </form>
+</div>
+
+<div class="book">
+    <h2>Book Title 2</h2>
+    <img src="book2.jpg" alt="Book 2">
+    <p>Price: $15</p>
+    <p>Summary: Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+    <p>Reviews:
+        <ol>
+            <li>Fascinating book, a must-read!</li>
+            <li>Couldn't get enough of it, amazing story.</li>
+        </ol>
+    </p>
+    <form>
+        <label for="quantity2">Quantity:</label>
+        <input type="number" id="quantity2" name="quantity2" min="1" max="10">
+        <button onclick="addToCart('Book Title 2', 15, document.getElementById('quantity2').value)">Add to Cart</button>
+    </form>
+</div>
+
+<script>
+    function addToCart(bookTitle, price, quantity) {
+        // Add logic to add the book and quantity to the cart
+        alert(quantity + " copy/copies of " + bookTitle + " added to cart. Total: $" + (price * quantity));
+    }
+</script>
